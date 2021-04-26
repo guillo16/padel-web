@@ -10,6 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 gem 'autoprefixer-rails'
+gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form', '~> 5.1'
 # Use SCSS for stylesheets
