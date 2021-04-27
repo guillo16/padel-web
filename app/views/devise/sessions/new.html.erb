@@ -12,7 +12,6 @@
         <% end %>
       </p>
     </div>
-
     <div class="bg-white shadow-md rounded-lg px-4 py-6 md:px-8 md:py-8">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="pb-6">
@@ -27,12 +26,12 @@
         <div>
           <% if devise_mapping.rememberable? %>
           <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, class: "text-base" %>
+          <%= f.label :remember_me, class: "text-sm md:text-base" %>
           <% end %>
         </div>
         <div>
           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-          <%= link_to "Forgot your password?", new_password_path(resource_name), class: "font-medium text-indigo-600 hover:text-indigo-500 text-base" %><br />
+          <%= link_to "Forgot your password?", new_password_path(resource_name), class: "font-medium text-indigo-600 hover:text-indigo-500 text-sm md:text-base" %><br />
           <% end %>
         </div>
       </div>
