@@ -35,6 +35,7 @@
 
 </div>
 <%= render 'shared/banner' %>
+<%= render 'shared/rules' %>
 <% if user_signed_in? %>
 <p><%= link_to 'Menu',about_path, class: "btn btn-success btn-block rounded-pill py-2 text-gray-900" %></p>
 <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "text-gray-900" %>

@@ -1,0 +1,8 @@
+<div class="container mx-auto px-16">
+  <h2 class="py-16 text-xl md:text-4xl lg:text-5xl font-bold text-center"><%= @post.title %></h2>
+  <img src="<%= @post.photo %>" alt="" class="mb-4">
+  <p><%= @post.content %></p>
+  <div class="py-24 text-center">
+    <%= link_to 'Volver', posts_path, class: "bg-indigo-500 rounded-lg py-3 px-8 font-bold text-white hover:bg-indigo-700"  %>
+  </div>
+</div>
