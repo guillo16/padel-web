@@ -94,4 +94,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_path(@post)
     end
   end
+
+  test "user should not be able to destroy a Post if logout" do
+    logout
+    assert_difference "Post.count", 0 do
+      delete post_path(@post)
+    end
+  end
 end
