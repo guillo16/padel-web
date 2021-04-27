@@ -80,4 +80,18 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
   end
+
+  test "user should update Post" do
+    patch post_path(@post) , params: {
+      post: { title: "This is the new title" }
+    }
+
+    assert_equal "This is the new title", Post.find(@post.id).title
+  end
+
+  test "user should be able to destroy a Post" do
+    assert_difference "Post.count", -1 do
+      delete post_path(@post)
+    end
+  end
 end
