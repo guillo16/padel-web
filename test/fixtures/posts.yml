@@ -1,8 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  photo: MyString
-  content: MyString
-
-
+first_post:
+  title: "New court open to public"
+  photo: "url"
+  content: "lorem ipsu"
