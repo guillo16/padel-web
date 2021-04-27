@@ -5,7 +5,4 @@ one:
   photo: MyString
   content: MyString
 
-two:
-  title: MyString
-  photo: MyString
-  content: MyString
+
