@@ -2,21 +2,21 @@
   <%= form_for(@post) do |f| %>
   <div class="mb-6">
     <%= f.label :title, class: "font-medium" %>
-    <%= f.text_field :title, class:"rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
+    <%= f.text_field :title, class: "rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
     <% if @post.errors.any? %>
     <p class="text-red-500"><%= @post.errors.full_messages_for(:title).join(', ') %></p>
     <% end %>
   </div>
   <div class="pb-6">
     <%= f.label :photo, class: "font-medium" %>
-    <%= f.text_field :photo, class:"rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
+    <%= f.text_field :photo, class: "rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
     <% if @post.errors.any? %>
     <p class="text-red-500"><%= @post.errors.full_messages_for(:photo).join(', ') %></p>
     <% end %>
   </div>
   <div class="pb-6">
     <%= f.label :content, class: "font-medium" %>
-    <%= f.text_area :content, size: "60x10", class:"rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
+    <%= f.text_area :content, size: "60x10", class: "rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
     <% if @post.errors.any? %>
     <p class="text-red-500"><%= @post.errors.full_messages_for(:content).join(', ') %></p>
     <% end %>
