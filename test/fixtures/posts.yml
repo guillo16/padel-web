@@ -1,3 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-first_user:
-  email: "user_1@mail.com"
+
+first_post:
+  title: "New court open to public"
+  photo: "url"
+  content: "lorem ipsu"
