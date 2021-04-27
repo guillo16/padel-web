@@ -1,0 +1,20 @@
+<div class="container mx-auto px-4">
+  <h2 class="py-16 text-xl md:text-4xl lg:text-5xl font-bold text-center">Noticias</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <% @posts.each do |post| %>
+    <%= link_to post_path(post)do   %>
+    <div class="card rounded-b-lg shadow-md hover:shadow-lg hover:text-gray-500">
+      <img src="<%= post.photo %>" alt="girl playing paddel" class="w-full object-cover rounded-t-lg">
+      <div class="py-4 px-4">
+        <h2 class="text-2xl font-bold"><%= post.title %></h2>
+        <p class="text-lg text-gray-500 leading-snug pt-4 pb-4"> <%= post.content %></p>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="py-24 text-center">
+    <%= link_to 'Volver', root_path, class: "bg-indigo-500 rounded-lg py-3 px-8 font-bold text-white hover:bg-indigo-700"  %>
+  </div>
+</div>
+
