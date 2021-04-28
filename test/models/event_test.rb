@@ -10,35 +10,35 @@ class EventTest < ActiveSupport::TestCase
                       )
   end
 
-  test "should be valid if all fields are set" do
+  test 'should be valid if all fields are set' do
     assert @event.valid?
   end
 
-  test "should be invalid if date is not set" do
+  test 'should be invalid if date is not set' do
     @event.date = nil
 
     assert_not @event.valid?
   end
 
-  test "should be invalid if description is not set" do
+  test 'should be invalid if description is not set' do
     @event.description = nil
 
     assert_not @event.valid?
   end
 
-  test "should be invalid if subtitle is not set" do
+  test 'should be invalid if subtitle is not set' do
     @event.subtitle = nil
 
     assert_not @event.valid?
   end
 
-  test "should be invalid if photo is not set" do
+  test 'should be invalid if photo is not set' do
     @event.photo = nil
 
     assert_not @event.valid?
   end
 
-  test "should be invalid if title is not set" do
+  test 'should be invalid if title is not set' do
     @event.title = nil
 
     assert_not @event.valid?
