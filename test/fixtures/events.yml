@@ -1,15 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  subtitle: MyString
-  description: MyString
-  date: 2021-04-28
-  photo: MyString
+first_event:
+  title: Torneo iniciacion
+  subtitle: El mejor torneo de todos
+  description: Un gran torneo
+  date: 2021-05-16
+  photo: url
 
-two:
-  title: MyString
-  subtitle: MyString
-  description: MyString
-  date: 2021-04-28
-  photo: MyString
