@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first_event:
+  title: Torneo iniciacion
+  subtitle: El mejor torneo de todos
+  description: Un gran torneo
+  date: 2021-05-16
+  photo: url
+
