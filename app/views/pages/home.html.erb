@@ -6,7 +6,10 @@
 <%= render 'shared/secondary_banner' %>
 <%= render 'shared/rules' %>
 <%= render 'shared/sponsor' %>
-<%= render 'shared/event' %>
+<section id="post-card" class="px-16">
+  <%= render 'shared/event' %>
+</section>
+
 <% if user_signed_in? %>
 <p><%= link_to 'Menu',about_path, class: "btn btn-success btn-block rounded-pill py-2 text-gray-900" %></p>
 <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "text-gray-900" %>

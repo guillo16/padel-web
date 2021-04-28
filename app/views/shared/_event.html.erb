@@ -1,5 +1,13 @@
-<div class="px-16">
-  <h2 class="py-16 md:py-24 lg:py-32 font-bold text-center text-4xl md:text-5xl lg:text-6xl ">Eventos</h2>
-  <div>
-  </div>
+<h2 class="py-16 md:py-24 lg:py-32 font-bold text-center text-4xl md:text-5xl lg:text-6xl ">Eventos</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+  <% @events.first(4).each do |event| %>
+    <%= link_to event_path(event) do %>
+      <%= render 'cards/event_card', event: event %>
+    <% end %>
+  <% end %>
+</div>
+<div class="rounded-md text-center py-16 md:py-24 lg:py-32">
+  <a href="#" class=" px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+    Ver más
+  </a>
 </div>

@@ -1,1 +1,11 @@
-
+<div class="max-w-xs overflow-hidden rounded-lg shadow-lg min-h-full relative">
+  <img class="object-cover w-full h-48" src="<%= event.photo %>" alt="padel"/>
+  <div class="px-6 py-4">
+    <div class="bg-white absolute top-40 right-4 px-6 shadow py-2 text-center text-gray-900 font-bold rounded">
+      <p class="uppercase "><%= event.date.strftime('%b') %></p>
+      <p><%= event.date.strftime('%d') %></p>
+    </div>
+    <h4 class="mb-2 pt-6 text-xl font-semibold tracking-tight text-gray-800"><%= event.title %></h4>
+    <p class="leading-normal text-gray-700"><%= event.subtitle %></p>
+  </div>
+</div>

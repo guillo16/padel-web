@@ -1,19 +1,9 @@
-<div class="container mx-auto px-14">
+<div class="container mx-auto px-4">
   <h2 class="py-16 text-xl md:text-4xl lg:text-5xl font-bold text-center">Eventos</h2>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-4">
     <% @events.each do |event| %>
     <%= link_to event_path(event) do  %>
-    <div class="max-w-xs overflow-hidden rounded-lg shadow-lg min-h-full relative">
-      <img class="object-cover w-full h-48" src="<%= event.photo %>" alt="padel"/>
-      <div class="px-6 py-4">
-        <div class="bg-white absolute top-40 right-4 px-6 shadow py-2 text-center text-gray-900 font-bold rounded">
-          <p class="uppercase "><%= event.date.strftime('%b') %></p>
-          <p><%= event.date.strftime('%d') %></p>
-        </div>
-        <h4 class="mb-2 pt-6 text-xl font-semibold tracking-tight text-gray-800"><%= event.title %></h4>
-        <p class="leading-normal text-gray-700"><%= event.subtitle %></p>
-      </div>
-    </div>
+      <%= render 'cards/event_card', event: event %>
     <% end %>
     <% end %>
   </div>

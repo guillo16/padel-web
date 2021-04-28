@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def home
     @posts = Post.order(created_at: :desc)
+    @events = Event.order(date: :desc)
   end
 
   def about; end
