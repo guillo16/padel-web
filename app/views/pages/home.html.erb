@@ -1,15 +1,18 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/main_banner' %>
-<section id="post-card" class="px-16">
+<section id="post-container" class="px-16">
   <%= render 'shared/post' %>
 </section>
 <%= render 'shared/secondary_banner' %>
-<%= render 'shared/rules' %>
-<%= render 'shared/sponsor' %>
-<section id="post-card" class="px-16">
+<section id="event-container" class="px-16">
   <%= render 'shared/event' %>
 </section>
-
+<%= render 'shared/sponsor' %>
+<%= render 'shared/rules' %>
+<section id="contact-container" class="px-16">
+  <%= render 'shared/contact' %>
+</section>
+<%=  %>
 <% if user_signed_in? %>
 <p><%= link_to 'Menu',about_path, class: "btn btn-success btn-block rounded-pill py-2 text-gray-900" %></p>
 <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "text-gray-900" %>
