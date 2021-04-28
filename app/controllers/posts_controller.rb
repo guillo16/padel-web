@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %w[index show]
 
   def index
-    @posts = Post.order(created_at: :asc)
+    @posts = Post.order(created_at: :desc)
   end
 
   def show; end

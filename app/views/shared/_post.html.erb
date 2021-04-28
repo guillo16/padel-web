@@ -1,0 +1,13 @@
+<h2 class="py-16 md:py-24 lg:py-32 font-bold text-center text-4xl md:text-5xl lg:text-6xl ">Noticias</h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
+  <% @posts.first(3).each do |post| %>
+    <%= link_to post_path(post) do %>
+      <%= render 'cards/post_card', post: post %>
+    <% end %>
+  <% end %>
+</div>
+<div class="rounded-md text-center py-16 md:py-24 lg:py-32">
+  <a href="#" class=" px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+    Ver más
+  </a>
+</div>
