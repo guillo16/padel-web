@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'events/index'
+  get 'events/show'
+  get 'events/new'
+  get 'events/create'
+  get 'events/edit'
+  get 'events/update'
+  get 'events/destroy'
   devise_for :users
   root to: 'pages#home'
 
