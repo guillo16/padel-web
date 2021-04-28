@@ -1,4 +1,4 @@
-<h2 class="py-16 md:py-24 lg:py-32 font-bold text-center text-4xl md:text-5xl lg:text-6xl ">Noticias</h2>
+<h2 class="py-16 md:py-24 lg:py-32 font-bold text-center text-3xl md:text-4xl lg:text-5xl">Noticias</h2>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
   <% @posts.first(3).each do |post| %>
     <%= link_to post_path(post) do %>

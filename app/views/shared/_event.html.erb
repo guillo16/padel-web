@@ -1,4 +1,4 @@
-<h2 class="py-16 md:py-24 lg:py-32 font-bold text-center text-4xl md:text-5xl lg:text-6xl ">Eventos</h2>
+<h2 class="py-16 md:py-24 lg:py-32 font-bold text-center text-3xl md:text-4xl lg:text-5xl">Eventos</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
   <% @events.first(4).each do |event| %>
     <%= link_to event_path(event) do %>
