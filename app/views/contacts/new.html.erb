@@ -1,22 +1,38 @@
-<%= form_for @contact do |f| %>
-<% if flash[:error].present? %>
-<p> flash[:error]</p>
-<% end %>
-<%= f.label :name %> <br>
-<%= f.text_field :name, required: true %>
-
-<br>
-<%= f.label :email %> <br>
-<%= f.text_field :email, required: true %>
-
-<br>
-<%= f.label :message %> <br>
-<%= f.text_area :message, as: :text %>
-
-
-<%= f.label :nickname %> <br>
-<%= f.text_field :nickname, hint: 'leave this field blank' %>
+<div class="bg-white">
+  <%= form_for @contact do |f| %>
+  <div class="grid grid-cols-2 gap-8">
+    <div class="mb-4">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true , class: "rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
+    </div>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email, required: true, autofocus: true, autocomplete: "email", class: "rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
+      <% if @contact.errors.any? %>
+      <p class="text-red-500 text-sm"><%= @contact.errors.full_messages_for(:email).join(', ') %></p>
+      <% end %>
+    </div>
+  </div>
 
 
-<%= f.submit 'Send Message', class: "button" %>
-<% end %>
+  <div>
+    <%= f.label :phone %>
+    <%= f.text_field :phone, required: true, autofocus: true, autocomplete: "phone", class: "rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md" %>
+    <% if @contact.errors.any? %>
+    <p class="text-red-500 text-sm"><%= @contact.errors.full_messages_for(:phone).join(', ') %></p>
+    <% end %>
+  </div>
+
+
+
+  <%= f.label :message %>
+  <%= f.text_area :message, as: :text, class: "rounded-lg w-full px-3 py-2 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md"%>
+
+  <div class="hidden">
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname, hint: 'leave this field blank' %>
+  </div>
+  <%= f.submit 'Send Message', class: "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+  <% end %>
+</div>
+
