@@ -1,0 +1,52 @@
+<div class="grid xl:grid-cols-3">
+  <div class="bg-indigo-700 px-8 md:px-16 text-white py-8">
+    <h2 class="text-lg font-semibold pb-8">Informacion de contacto</h2>
+    <p class="pb-8">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam consectetur voluptate hic voluptas mollitia voluptatem nulla accusantium, dolorum explicabo.</p>
+    <p><i class="pb-4 fas fa-envelope text-xl mr-2"></i> melchora@gmail.com</p>
+    <p><i class="pb-4 fas fa-phone text-xl mr-2"></i> 381-260-4510</p>
+    <p><i class="fab fa-whatsapp-square text-2xl mr-2"></i>3483483948394s</p>
+  </div>
+  <div class="bg-white px-8 md:px-16 col-span-2 py-8">
+    <h2 class="text-lg font-semibold pb-8">Mandanos un mensaje</h2>
+    <%= form_for @contact do |f| %>
+    <div class="grid md:grid-cols-2 md:gap-8 ">
+      <div class="mb-6">
+        <%= f.label :first_name, class: "text-md" %>
+        <%= f.text_field :first_name, required: true , class: "rounded-lg w-full px-3 py-3 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md mt-1" %>
+      </div>
+      <div class="mb-6">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, required: true , class: "rounded-lg w-full px-3 py-3 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md mt-1" %>
+      </div>
+    </div>
+    <div class="mb-6">
+      <%= f.label :email %>
+      <%= f.text_field :email, required: true, autofocus: true, autocomplete: "email", class: "rounded-lg w-full px-3 py-3 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md mt-1" %>
+      <% if @contact.errors.any? %>
+      <p class="text-red-500 text-sm"><%= @contact.errors.full_messages_for(:email).join(', ') %></p>
+      <% end %>
+    </div>
+    <div class="mb-6">
+      <%= f.label :phone %>
+      <%= f.text_field :phone, required: true, autofocus: true, autocomplete: "phone", class: "rounded-lg w-full px-3 py-3 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md mt-1" %>
+      <% if @contact.errors.any? %>
+      <p class="text-red-500 text-sm"><%= @contact.errors.full_messages_for(:phone).join(', ') %></p>
+      <% end %>
+    </div>
+    <div class="mb-6">
+      <div class="flex justify-between">
+        <%= f.label :message %>
+        <p class="text-gray-600 text-sm md:text-md">Max 300 caracteres.</p>
+      </div>
+      <%= f.text_area :message, as: :text, size: "60x10", class: "rounded-lg w-full px-3 py-3 border border-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-sm sm:text-md mt-1"%>
+    </div>
+    <div class="hidden">
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, hint: 'leave this field blank' %>
+    </div>
+    <div class="md:text-center xl:text-right">
+      <%= f.submit "Enviar mensaje", class: "w-full md:w-auto py-3 md:py-4 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 md:text-lg mb-8" %>
+      <% end %>
+    </div>
+  </div>
+</div>
