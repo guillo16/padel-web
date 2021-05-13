@@ -1,7 +1,7 @@
 <nav class="bg-gray-800">
   <div class="flex flex-wrap content-center justify-between px-4 py-4">
     <div>
-      <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg">
+      <img class="h-8 w-auto sm:h-10 pr-32" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg">
     </div>
     <div class="hidden md:block self-center">
       <%= link_to "Reservas","#", class: "text-white font-bold py-2 hover: text-gray mx-4"  %>
@@ -10,7 +10,12 @@
       <%= link_to "Quienes somos","#", class: "text-white font-bold py-2 hover: text-gray mx-4"  %>
     </div>
     <div class="hidden md:block self-center">
-      <%= link_to "Login","#", class: "text-gray font-bold py-3 px-9 bg-gray-100 bg-opacity-100 rounded-lg hover:bg-purple-900 hover:text-white"  %>
+      <% if user_signed_in? %>
+      <p><%= link_to 'Menu',about_path, class: "btn btn-success btn-block rounded-pill py-2 text-gray-900" %></p>
+      <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "text-gray font-bold py-3 px-9 bg-gray-100 bg-opacity-100 rounded-lg hover:bg-purple-900 hover:text-white" %>
+      <% else %>
+      <p><%= link_to 'Iniciar sesión', new_user_session_path, class: "text-gray font-bold py-3 px-9 bg-gray-100 bg-opacity-100 rounded-lg hover:bg-purple-900 hover:text-white" %></p>
+      <% end %>
     </div>
     <div class="md:hidden self-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
